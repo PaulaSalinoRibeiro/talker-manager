@@ -1,6 +1,4 @@
-const getAll = (req, res, next) => {
-
-};
+const getAll = require('./getAll');
 
 module.exports = {
   getAll,
