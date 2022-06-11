@@ -1,9 +1,9 @@
 const express = require('express');
-const services = require('../services');
-const middlewares = require('../middlewares');
+const { createLogin } = require('../services');
+const { authoMiddleware, createTokenMiddleware } = require('../middlewares');
 
 const routeLogin = express.Router();
 
-routeLogin.post('/', middlewares.authoMiddleware, services.createLogin);
+routeLogin.post('/', authoMiddleware, createTokenMiddleware, createLogin);
 
 module.exports = routeLogin;

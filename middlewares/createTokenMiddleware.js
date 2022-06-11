@@ -1,12 +1,12 @@
-const utils = require('../utils');
+const { generateToken } = require('../utils');
 
-const creteTokenMiddleware = (req, _res, next) => {
+const createTokenMiddleware = (req, res, next) => {
   const { email, password } = req.body;
-  const newToken = utils.generateToken(email, password);
+  const newToken = generateToken(email, password);
 
-  req.user = newToken;
+  req.user = { newToken };
 
   next();
 };
 
-module.exports = creteTokenMiddleware;
+module.exports = createTokenMiddleware;

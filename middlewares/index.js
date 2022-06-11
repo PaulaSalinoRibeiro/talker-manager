@@ -1,7 +1,15 @@
 const authoMiddleware = require('./authoMiddleware');
-const creteTokenMiddleware = require('./createTokenMiddleware');
+const createTokenMiddleware = require('./createTokenMiddleware');
+const validateTokenMiddleware = require('./validateTokenMiddleware');
+const validateNameMiddleware = require('./validateNameMiddleware');
+const validateAgeMiddleware = require('./validateAgeMiddleware');
+const validateTalkMiddleware = require('./validateTalkMiddleware');
 
 module.exports = {
   authoMiddleware,
-  creteTokenMiddleware,
+  createTokenMiddleware,
+  validateTokenMiddleware,
+  validateNameMiddleware,
+  validateAgeMiddleware,
+  validateTalkMiddleware,
 };
