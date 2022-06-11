@@ -8,6 +8,7 @@ const {
   validateAgeMiddleware,
   validateTalkMiddleware,
   validateWatchedAtMiddleware,
+  validateRateMiddleware,
 } = require('../middlewares');
 
 const route = express.Router();
@@ -22,7 +23,8 @@ route.use(validateTokenMiddleware,
   validateNameMiddleware, 
   validateAgeMiddleware, 
   validateTalkMiddleware,
-  validateWatchedAtMiddleware);
+  validateWatchedAtMiddleware, 
+  validateRateMiddleware);
 
 route.post('/talker', createTalker);
 

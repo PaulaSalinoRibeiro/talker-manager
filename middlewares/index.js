@@ -5,6 +5,7 @@ const validateNameMiddleware = require('./validateNameMiddleware');
 const validateAgeMiddleware = require('./validateAgeMiddleware');
 const validateTalkMiddleware = require('./validateTalkMiddleware');
 const validateWatchedAtMiddleware = require('./validateWatchedAtMiddleware');
+const validateRateMiddleware = require('./validateRateMiddleware');
 
 module.exports = {
   authoMiddleware,
@@ -14,4 +15,5 @@ module.exports = {
   validateAgeMiddleware,
   validateTalkMiddleware,
   validateWatchedAtMiddleware,
+  validateRateMiddleware,
 };
