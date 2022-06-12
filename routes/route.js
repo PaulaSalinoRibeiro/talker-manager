@@ -28,6 +28,13 @@ route.post('/talker',
   validateRateMiddleware,
   createTalker);
 
-route.put('/talker/:id', updateTalker);
+route.put('/talker/:id', 
+  validateTokenMiddleware,
+  validateNameMiddleware,
+  validateAgeMiddleware, 
+  validateTalkMiddleware,
+  validateWatchedAtMiddleware,
+  validateRateMiddleware,
+  updateTalker);
 
 module.exports = route;
