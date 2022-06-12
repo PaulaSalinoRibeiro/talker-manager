@@ -11,8 +11,6 @@ app.use(bodyParser.json());
 
 // app.use('/talker', routeTalker);
 
-app.use('/', route);
-
 const HTTP_OK_STATUS = 200;
 const PORT = '3000';
 
@@ -20,6 +18,8 @@ const PORT = '3000';
 app.get('/', (_request, response) => {
   response.status(HTTP_OK_STATUS).send();
 });
+
+app.use('/', route);
 
 app.listen(PORT, () => {
   console.log('Online');
