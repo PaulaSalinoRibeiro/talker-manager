@@ -4,7 +4,8 @@ const { getAll,
   createTalker, 
   createLogin, 
   updateTalker, 
-  deleteTalker } = require('../services');
+  deleteTalker,
+  searchTalker } = require('../services');
 
 const {
   authoMiddleware,
@@ -22,6 +23,8 @@ const route = express.Router();
 route.post('/login', authoMiddleware, createTokenMiddleware, createLogin);
 
 route.get('/talker', getAll);
+
+route.get('/talker/search', validateTokenMiddleware, searchTalker);
 
 route.get('/talker/:id', getById);
 
