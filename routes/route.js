@@ -1,5 +1,11 @@
 const express = require('express');
-const { getAll, getById, createTalker, createLogin, updateTalker } = require('../services');
+const { getAll, 
+  getById, 
+  createTalker, 
+  createLogin, 
+  updateTalker, 
+  deleteTalker } = require('../services');
+
 const {
   authoMiddleware,
   createTokenMiddleware,
@@ -19,22 +25,19 @@ route.get('/talker', getAll);
 
 route.get('/talker/:id', getById);
 
-route.post('/talker', 
-  validateTokenMiddleware,
-  validateNameMiddleware,
-  validateAgeMiddleware, 
-  validateTalkMiddleware,
-  validateWatchedAtMiddleware,
-  validateRateMiddleware,
-  createTalker);
+route.delete('/talker/:id', validateTokenMiddleware, deleteTalker);
 
-route.put('/talker/:id', 
+route.use(
   validateTokenMiddleware,
   validateNameMiddleware,
   validateAgeMiddleware, 
   validateTalkMiddleware,
   validateWatchedAtMiddleware,
   validateRateMiddleware,
-  updateTalker);
+);
+
+route.post('/talker', createTalker);
+
+route.put('/talker/:id', updateTalker);
 
 module.exports = route;
