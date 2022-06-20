@@ -8,10 +8,12 @@ O projeto consiste de uma API REST seguindo os padrões RESTIFULL para:
   - editar
   - criar 
   - deletar 
+ 
+ palestrantes em um arquivo `talker.json` 
 
 ## Utilização 
 
-1. Clonar repositório 
+1. Clonar repositório `git@github.com:PaulaSalinoRibeiro/talker-manager.git`
 2. Instalar as dependências `npm install`
 3. rodar o comando `npm run dev`
 
@@ -42,10 +44,13 @@ Essa é uma rota que permite filtrar o palestrante pelo nome, sendo necessário 
 
 Exemplo de token 
 
+```
 headers: {
     'Content-Type': 'application/json'
     authorization: '2FsdGVkX1+NcBEVW'
   }
+```
+
 
 ### GET/talker/:id 
 
@@ -63,6 +68,7 @@ Essa rota permite deletar um palestrate através do seu id, sendo necessário pa
 
 Essa rota permite a criação de um novo paletrante, sendo necessário passar um token através do headers da requisição. E as informações sobre o palestrante no body da requisição como mostra o exemplo a seguir
 
+```
 {
   "id": 1,
   "name": "Ana",
@@ -72,6 +78,7 @@ Essa rota permite a criação de um novo paletrante, sendo necessário passar um
     "rate": 4
   }
 }
+```
 
 `http://localhost:3000/talker`
 
