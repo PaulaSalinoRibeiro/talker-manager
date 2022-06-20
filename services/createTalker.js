@@ -12,7 +12,7 @@ const createTalker = async (req, res, _next) => {
     };
     const newData = [...data, newTalker];
     await utils.writeFile(newData);
-    res.status(201).json(newTalker);
+     return res.status(201).json(newTalker);
   } catch (err) {
     console.log(err);
   }
